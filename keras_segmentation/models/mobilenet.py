@@ -103,12 +103,12 @@ def get_mobilenet_encoder(input_height=224, input_width=224,
     x = _depthwise_conv_block(x, 1024, alpha, depth_multiplier, block_id=13)
     f5 = x
 
-    if pretrained == 'imagenet':
-        model_name = 'mobilenet_%s_%d_tf_no_top.h5' % ('7_5', 224)
+#     if pretrained == 'imagenet':
+#         model_name = 'mobilenet_%s_%d_tf_no_top.h5' % ('7_5', 224)
 
-        weight_path = BASE_WEIGHT_PATH + model_name
-        weights_path = keras.utils.get_file(model_name, weight_path)
+#         weight_path = BASE_WEIGHT_PATH + model_name
+#         weights_path = keras.utils.get_file(model_name, weight_path)
 
-        Model(img_input, x).load_weights(weights_path, by_name=True, skip_mismatch=True)
+#         Model(img_input, x).load_weights(weights_path, by_name=True, skip_mismatch=True)
 
     return img_input, [f1, f2, f3, f4, f5]
