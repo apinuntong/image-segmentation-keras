@@ -181,7 +181,8 @@ def train(model,
 
     if callbacks is None and (not checkpoints_path is  None) :
         default_callback = ModelCheckpoint(
-                filepath=checkpoints_path + ".{epoch:05d}",
+                filepath=checkpoints_path + "_{epoch:05d}.h5",
+                save_best_only=True,
                 save_weights_only=True,
                 verbose=True
             )
