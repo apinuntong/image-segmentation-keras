@@ -5,7 +5,7 @@ from .data_utils.data_loader import image_segmentation_generator, \
     verify_segmentation_dataset
 import six
 from keras.callbacks import Callback
-from tensorflow.keras.callbacks import ModelCheckpoint
+from keras.callbacks import ModelCheckpoint
 import tensorflow as tf
 import glob
 import sys
@@ -53,8 +53,8 @@ class CheckpointsCallback(Callback):
 
     def on_epoch_end(self, epoch, logs=None):
         if self.checkpoints_path is not None:
-            self.model.save_weights(self.checkpoints_path + "." + str(epoch))
-            print("saved ", self.checkpoints_path + "." + str(epoch))
+            self.model.save_weights(self.checkpoints_path + "_" + str(epoch)+".h5")
+            print("saved ", self.checkpoints_path + "_" + str(epoch)+".h5")
 
 
 def train(model,
