@@ -69,7 +69,7 @@ def get_mobilenet_encoder(input_height=224, input_width=224,
     assert input_height % 32 == 0
     assert input_width % 32 == 0
 
-    alpha = 0.50
+    alpha = 0.75
     depth_multiplier = 1
     dropout = 1e-3
 
